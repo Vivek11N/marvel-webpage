@@ -1,0 +1,17 @@
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid #000;
+  white-space: nowrap;
+  margin: 20px auto;
+  letter-spacing: 2px;
+  font-size: 1.7em;
+  text-align: center;
+  height: 1em;
+  font-family: Georgia;
+  font-weight: bolder;
+  color: aliceblue;
+  flex-direction: column-reverse;
+  
+  border-bottom: 5px;
+
+}

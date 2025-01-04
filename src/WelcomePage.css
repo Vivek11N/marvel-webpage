@@ -1,0 +1,160 @@
+/* Main Container */
+.welcome-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url(./images/777.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #4d6369;
+  position: relative;
+}
+
+.welcome-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent overlay */
+  filter: blur(8px); /* Applies blur to the background */
+  z-index: 1;
+}
+
+/* Welcome Content Box */
+.welcome-content {
+  position: relative;
+  z-index: 2; /* Ensures the box content is above the blurred background */
+  background: rgba(117, 116, 116, 0.6); /* Semi-transparent background for the box */
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid red; /* Adds a red border */
+  box-shadow: 0 0 20px 5px red; /* Red glow effect around the box */
+  text-align: center;
+  max-width: 90%; /* Restricts width on smaller screens */
+}
+
+/* Responsive Typography */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: white;
+  overflow: hidden; /* Ensures the text is hidden outside the container */
+  white-space: nowrap; /* Prevents text wrapping */
+  border-right: 3px solid white; /* Creates the cursor effect */
+  animation: typewriter 2s steps(30, end), blink 0.6s step-end infinite;
+  caret-color: transparent;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-shadow: 2px 2px red;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: white;
+  opacity: 0;
+  animation: fadeIn 1s ease-in 1s forwards; /* Fade-in effect for the paragraph */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Explore Button */
+.explore-button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background-color: #e62429;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in 2s forwards;
+  transition: background-color 0.5s, transform 0.3s; /* Fade-in effect for the button */
+}
+
+.explore-button:hover {
+  
+
+  background-color: #c91d22;
+  transform: scale(1.1); /* Subtle enlargement on hover */
+}
+
+
+/* Animations */
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem; /* Smaller heading for tablets */
+  }
+
+  p {
+    font-size: 1rem; /* Adjust paragraph size */
+  }
+
+  .explore-button {
+    font-size: 0.9rem; /* Smaller button text */
+  }
+
+  .welcome-content {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem; /* Even smaller heading for mobile */
+  }
+
+  p {
+    font-size: 0.9rem; /* Adjust paragraph size */
+  }
+
+  .explore-button {
+    font-size: 0.8rem; /* Smaller button text for mobile */
+  }
+
+  .welcome-content {
+    padding: 10px; /* Reduce padding further */
+  }
+}
+.marvel-logo {
+  position: absolute;
+  top: 150px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px; /* Set a small width */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 3; /* Ensure it's above the blurred background */
+  animation: fadeIn 1s ease-in forwards; /* Add a fade-in effect */
+}

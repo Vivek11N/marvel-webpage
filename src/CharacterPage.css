@@ -1,0 +1,37 @@
+/* CharacterPage.css */
+.character-page {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .character-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .character-image {
+    max-width: 300px;
+    margin-right: 20px; /* Space between image and text */
+  }
+  
+  .character-info {
+    max-width: 600px;
+    text-align: left;
+  }
+  
+  .character-info p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .back-to-home-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  

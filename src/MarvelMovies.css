@@ -1,0 +1,184 @@
+.movies-container {
+  padding: 20px;
+  text-align: center;
+  background-color: black;
+  background-image: url(./images/marvel-superhero-movie-avengers-3p49xboy2uzn0w1t.jpg);
+  background-size: cover; /* Ensures the background covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling of the image */
+  height: 100vh; /* Ensures it spans the full viewport height */
+  min-height: 100%; /* Minimum height fallback */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Ensures the ::before pseudo-element works properly */
+  overflow: hidden; /* Prevents overflow issues */
+}
+.movies-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent overlay */
+  filter: blur(8px); /* Applies blur to the background */
+  z-index: 1;
+}
+
+.movies-grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px;
+  max-width: calc(200px * 4 + 60px);
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(246, 5, 5, 0.1);
+  z-index: 2;
+  background: black;
+}
+
+.movies-grid::-webkit-scrollbar {
+  height: 8px;
+  z-index: 2;
+}
+
+.movies-grid::-webkit-scrollbar-thumb {
+  background: rgb(85, 85, 85);
+  border-radius: 10px;
+}
+
+.movies-grid::-webkit-scrollbar-track {
+  background: #333;
+}
+.movie-grid img:hover {
+  filter: brightness(1.5); 
+}
+.movie-grid:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+}
+.movie-card {
+  flex: 0 0 200px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 2px 10px red;
+}
+
+.movie-card img {
+  width: 75%;
+  border-radius: 10px;
+}
+
+.movie-card h3 {
+  color: white;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px red;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-button {
+  margin-top: 20px;
+  text-decoration: none;
+  color: white;
+  background-color: #d32f2f;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.slider-controls {
+  position: relative;
+  width: 100%;
+  max-width: calc(200px * 4 + 60px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scroll-button {
+  position: absolute;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 1000px;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+
+.scroll-button:hover {
+  background-color: darkred;
+}
+
+.scroll-button:first-of-type {
+  left: -75px;
+  bottom:-230px; /* Adjust as needed */
+}
+
+.scroll-button:last-of-type {
+  right: -79px;
+  bottom:-245px; /* Adjust as needed */
+}
+@media (max-width: 768px) {
+  .movies-container {
+    background-color: black; /* Ensure black background on tablets and smaller devices */
+  }
+}
+
+@media (max-width: 480px) {
+  .movies-container {
+    background-color: black; /* Ensure black background on mobile devices */
+  }
+}
+
+/* Add a global override to ensure background stays black for this page */
+body.movies-page {
+  background-color: black !important; /* Enforce black background on this page */
+}
+.movies-container h1 {
+  font-size: 3rem; /* Adjust as needed */
+  color: white; /* Base color */
+  text-shadow: 
+    0 0 5px rgba(255, 0, 0, 0.8),  /* Inner red glow */
+    0 0 10px rgba(255, 0, 0, 0.6), /* Outer red glow */
+    0 0 20px rgba(255, 0, 0, 0.4); /* Larger red glow */
+  animation: glowing-text 2s infinite alternate; /* Glowing animation */
+  letter-spacing: 2px; /* Enhance typography look */
+  user-select: none; /* Disable text selection */
+  pointer-events: none; /* Avoid cursor and interaction */
+  z-index: 2;
+}
+
+/* Glowing text animation */
+@keyframes glowing-text {
+  0% {
+    text-shadow: 
+      0 0 5px rgba(255, 0, 0, 0.8),
+      0 0 10px rgba(255, 0, 0, 0.6),
+      0 0 20px rgba(255, 0, 0, 0.4);
+    transform: scale(1); /* Normal size */
+  }
+  50% {
+    text-shadow: 
+      0 0 10px rgba(255, 0, 0, 1),
+      0 0 20px rgba(255, 0, 0, 0.8),
+      0 0 40px rgba(255, 0, 0, 0.6);
+    transform: scale(1.1); /* Slightly larger */
+  }
+  100% {
+    text-shadow: 
+      0 0 5px rgba(255, 0, 0, 0.8),
+      0 0 10px rgba(255, 0, 0, 0.6),
+      0 0 20px rgba(255, 0, 0, 0.4);
+    transform: scale(1); /* Back to normal size */
+  }
+}
+
